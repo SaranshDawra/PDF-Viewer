@@ -4,6 +4,7 @@
 }
 
 .top-bar {
+    text-align: center;
     background: #333;
     color: #fff;
     padding: 1rem;
@@ -16,14 +17,39 @@
     outline: none;
     cursor: pointer;
     padding: 0.7rem 2rem;
+    margin: 0 10px;
+}
+
+.btn > i {
+    margin: 5px;
 }
 
 .btn:hover {
     opacity: 0.9;
 }
 
-.page-info {
-    margin-left: 1rem;
+.pdf-render-container {
+    text-align: center;
+}
+
+.zoom-btn-container {
+    position: fixed;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    bottom: 2%;
+    right: 2%;
+}
+
+.zoom-btn-container button {
+    border-radius: 80%;
+    background-color: #272727;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 1.2rem;
+    margin: 5px;
 }
 
 .error {

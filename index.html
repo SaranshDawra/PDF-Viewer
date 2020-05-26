@@ -20,7 +20,23 @@
         </button>
     </div>
 
-    <canvas id="pdf-render"></canvas>
+    <div class="pdf-render-container">
+        <canvas id="pdf-render"></canvas>
+    </div>
+
+    <div class="zoom-btn-container">
+        <button class="btn" id="zoom-in-btn">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+
+        <button class="btn" id="zoom-out-btn">
+            <i class="fa fa-minus" aria-hidden="true"></i>
+        </button>
+
+        <button class="btn" id="reset-zoom-btn">
+            <i class="fa fa-square-o" aria-hidden="true"></i>
+        </button>
+    </div>
 
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="https://kit.fontawesome.com/006dd59c08.js" crossorigin="anonymous"></script>
