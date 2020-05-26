@@ -33,7 +33,7 @@
 }
 
 .zoom-btn-container {
-    position: fixed;
+    position: absolute;
     text-align: center;
     display: flex;
     flex-direction: column;

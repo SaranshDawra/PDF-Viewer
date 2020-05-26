@@ -1,12 +1,12 @@
-const url = "../docs/pdf.pdf";
+const url = "../docs/PDF.pdf";
 
 let pdfDoc = null,
     pageNum = 1,
     pageIsRendering = false,
-    pageNumIsPending = null;
+    pageNumIsPending = null,
+    scale = 1.2;
 
-const scale = 1.2,
-    canvas = document.querySelector('#pdf-render'),
+const canvas = document.querySelector('#pdf-render'),
     ctx = canvas.getContext('2d');
 
 // Render the page
@@ -64,6 +64,22 @@ const showNextPage = () => {
     queueRenderPage(pageNum);
 }
 
+// Zoom in page
+const zoomInPage = () => {
+    scale += 0.1;
+    renderPage(pageNum);
+}
+
+const zoomOutPage = () => {
+    scale -= 0.1;
+    renderPage(pageNum);
+}
+
+const resetPage = () => {
+    scale = 1.2;
+    renderPage(pageNum)
+}
+
 // Get Document
 
 pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
@@ -85,3 +101,9 @@ pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
 document.querySelector('#prev-page').addEventListener('click', showPrevPage);
 
 document.querySelector('#next-page').addEventListener('click', showNextPage);
+
+document.querySelector('#zoom-in-btn').addEventListener('click', zoomInPage);
+
+document.querySelector('#zoom-out-btn').addEventListener('click', zoomOutPage);
+
+document.querySelector('#reset-zoom-btn').addEventListener('click', resetPage);
